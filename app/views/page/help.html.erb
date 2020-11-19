@@ -1,0 +1,18 @@
+<h1>Help</h1>
+<p>user info </p>
+
+
+<% if user_signed_in? %>
+    <p>
+
+    name <%= current_user.name %>
+    <br>
+    surname  <%= current_user.surname %>
+   </p>
+<% else %>
+
+<p> 
+empty
+</p>
+   
+<% end %>

@@ -1,0 +1,9 @@
+
+
+
+
+<h1> your favorites </h1>
+<% current_user.favos.each do |favo| %>
+  you liked this pet: <%= link_to favo.pet.name, favo.pet %>
+  <br>
+  <% end %>

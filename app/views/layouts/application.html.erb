@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tinderapp1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <header class="headSec">
+
+  
+  <ul>
+  <li><%= link_to "Home",  '/'  %></li>
+  <li><%= link_to "Favourites", about_path %></li>
+  <li><%= link_to "CART test", cart_path %></li>
+
+
+  <% if user_signed_in? %>
+   
+     <li><a href="/help">Hi <%= current_user.name %></a></li>
+
+    <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+<% else %>
+    <li><%= link_to 'Register', new_user_registration_path %></li> 
+    <li><%= link_to 'Sign in', new_user_session_path %></li>
+<% end %>
+
+
+
+  </ul>
+  
+  
+</header>
+
+<div class="container">
+<%= yield %>
+</div>
+
+<footer class="foot">
+
+</footer>
+
+
+    
+  </body>
+</html>

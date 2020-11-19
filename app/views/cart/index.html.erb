@@ -1,0 +1,39 @@
+<h1>Cart#index</h1>
+<p>Find me in app/views/cart/index.html.erb</p>
+
+<% if @cart.empty? %>
+    <p>You have not added any items yet</p>
+    <% end %>
+    
+
+    <div id="itemsContainer">
+    <table id="customers">
+        <% total = 0 %>
+        <% @cart.each do |id, quantity| %>
+        
+        <% item = Pet.find_by_id(id) %>
+        
+        <tr>
+            <td>
+              
+                
+            </td>
+            
+            <td class="title"><%= link_to item.name, item %></td>
+            <td><a href="#">Remove From Cart</a></td>
+    
+            
+        </tr>
+        
+        <tr>
+            <% total += quantity %>
+          </tr>
+         <% end %>
+         <tr><td>
+            Grand Total: <%= (total) %>
+            
+            </td>
+          </tr>
+           
+    </table>
+      </div>
