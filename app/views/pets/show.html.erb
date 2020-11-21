@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Name:</strong>
@@ -10,6 +10,20 @@
   <%= @pet.breed %>
 </p>
 
+<p>
+  <strong> pet id:</strong>
+  <%= @pet.id %>
+  
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pet.User_id %>
+ 
+
+
+
+</br>
 <td><%= link_to favo_text, favo_update_path(pet: @pet), id:'favo_link', remote: true %> </td>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |

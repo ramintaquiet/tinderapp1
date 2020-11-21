@@ -5,9 +5,12 @@
 <% if user_signed_in? %>
     <p>
 
-    name <%= current_user.name %>
+    name : <%= current_user.name %>
     <br>
-    surname  <%= current_user.surname %>
+    surname  :  <%= current_user.surname %>
+
+    <br>
+    user ID  :  <%= current_user.id %>
    </p>
 <% else %>
 

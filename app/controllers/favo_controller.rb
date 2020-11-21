@@ -1,4 +1,6 @@
 class FavoController < ApplicationController
+  before_action :authenticate_user!
+  
   def update
 
     favo = Favo.where(pet: Pet.find(params[:pet]), user: current_user)

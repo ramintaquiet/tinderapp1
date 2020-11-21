@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_175710) do
+ActiveRecord::Schema.define(version: 2020_11_21_120755) do
 
   create_table "favos", force: :cascade do |t|
     t.integer "pet_id", null: false
@@ -26,6 +26,26 @@ ActiveRecord::Schema.define(version: 2020_11_19_175710) do
     t.string "breed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "User_id"
+    t.index ["User_id"], name: "index_pets_on_User_id"
+  end
+
+  create_table "prof2s", force: :cascade do |t|
+    t.string "name"
+    t.string "atype"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_prof2s_on_user_id"
+  end
+
+  create_table "profs", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +64,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_175710) do
 
   add_foreign_key "favos", "pets"
   add_foreign_key "favos", "users"
+  add_foreign_key "pets", "Users"
+  add_foreign_key "prof2s", "users"
+  add_foreign_key "profs", "users"
 end

@@ -26,9 +26,8 @@
 
 
         <% if user_signed_in? %>
+          
         
-          <td>  <a href="/cart/<%= pet.id %>" class="button">Add To Cart</a> </td>
-
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

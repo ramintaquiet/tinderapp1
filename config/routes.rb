@@ -2,12 +2,17 @@ Rails.application.routes.draw do
 
   
   
+  resources :prof2s
+  get '/prof2s', to: 'prof2s#index'
+
   get 'favo/update'
   #get 'cart/index'
   resources :pets
-  devise_for :users
+  devise_for :users do 
+    resources :prof2s
+  end
 
-  get '/cart', to: 'cart#index'
+  
   root 'pets#index'
 
   get '/cart/:id', to: 'cart#add'

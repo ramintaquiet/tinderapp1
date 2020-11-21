@@ -1,17 +1,19 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index] 
 
   # GET /pets
   # GET /pets.json
   def index
     @pets = Pet.all
+    
   end
 
   # GET /pets/1
   # GET /pets/1.json
   def show
     @favo_exists = Favo.where(pet: @pet, user: current_user) == [] ? false : true
+   
   end
 
   # GET /pets/new
@@ -26,8 +28,10 @@ class PetsController < ApplicationController
   # POST /pets
   # POST /pets.json
   def create
+   
     @pet = Pet.new(pet_params)
-
+   # @pet.user = current_user
+  
     respond_to do |format|
       if @pet.save
         format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
@@ -71,6 +75,6 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:name, :breed)
+      params.require(:pet).permit(:name, :breed,)
     end
 end
