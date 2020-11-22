@@ -4,3 +4,9 @@
 
 
 
+
+<h1> All profiles </h1>
+<% current_user.profiles.each do |profile| %>
+ <%= link_to profile.prof2.name, profile.prof2 %>
+  <br>
+  <% end %>

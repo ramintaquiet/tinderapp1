@@ -7,4 +7,5 @@ class User < ApplicationRecord
          has_many :favos
          has_many :pets
          has_many :prof2s
+         has_many :profiles
 end

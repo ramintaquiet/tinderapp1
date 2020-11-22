@@ -11,7 +11,7 @@ Favo.create(pet: Pet.find(params[:pet]), user:current_user)
     else
 #delete the fav
 favo.destroy_all
-@favo_exists = true
+@favo_exists = false
     end
 
     respond_to do |format|

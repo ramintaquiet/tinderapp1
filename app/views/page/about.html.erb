@@ -7,3 +7,14 @@
   you liked this pet: <%= link_to favo.pet.name, favo.pet %>
   <br>
   <% end %>
+
+  
+
+
+
+
+  <h1> All profiles </h1>
+  <% current_user.profiles.each do |profile| %>
+ profile:   <%= link_to profile.prof2.name, profile.prof2 %>
+  <br>
+    <% end %>

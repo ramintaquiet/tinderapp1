@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Prof2s</h1>
+
+
+
+
 
 <p> this will be a pets profile. it can show only profiles of who os loggedin <p>
 
@@ -18,7 +21,7 @@
     <% @prof2s.each do |prof2| %>
       <tr>
 
-      <%    if (user_signed_in? && (current_user.id == prof2.user_id))   %>
+    
         <td><%= prof2.name %></td>
         <td><%= prof2.atype %></td>
         <td><%= prof2.user.email %></td>
@@ -35,7 +38,7 @@
         <td><%= link_to 'Destroy', prof2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         </tr>
-    <% end %>
+  
 
     
   </tbody>

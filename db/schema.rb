@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_120755) do
+ActiveRecord::Schema.define(version: 2020_11_22_210821) do
 
   create_table "favos", force: :cascade do |t|
     t.integer "pet_id", null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2020_11_21_120755) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pet_id"], name: "index_favos_on_pet_id"
     t.index ["user_id"], name: "index_favos_on_user_id"
+  end
+
+  create_table "nologs", force: :cascade do |t|
+    t.string "model"
+    t.integer "prof2_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prof2_id"], name: "index_nologs_on_prof2_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -37,6 +45,15 @@ ActiveRecord::Schema.define(version: 2020_11_21_120755) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_prof2s_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "prof2_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prof2_id"], name: "index_profiles_on_prof2_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "profs", force: :cascade do |t|
@@ -64,7 +81,10 @@ ActiveRecord::Schema.define(version: 2020_11_21_120755) do
 
   add_foreign_key "favos", "pets"
   add_foreign_key "favos", "users"
+  add_foreign_key "nologs", "prof2s"
   add_foreign_key "pets", "Users"
   add_foreign_key "prof2s", "users"
+  add_foreign_key "profiles", "prof2s"
+  add_foreign_key "profiles", "users"
   add_foreign_key "profs", "users"
 end

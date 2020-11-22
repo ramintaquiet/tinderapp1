@@ -20,6 +20,15 @@
   <%= @prof2.id %>
 </p>
 
+<%= link_to p_text,  profile_update_path(prof2: @prof2), id:'p_link', remote: true   %>
+</br>
+
+
+<%= link_to n_text,  nolog_update_path(prof2: @prof2), id:'n_link', remote: true   %>
+
+
+
+
 
 <%= link_to 'Edit', edit_prof2_path(@prof2) %> |
 <%= link_to 'Back', prof2s_path %>

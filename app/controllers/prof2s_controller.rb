@@ -11,6 +11,10 @@ class Prof2sController < ApplicationController
   # GET /prof2s/1
   # GET /prof2s/1.json
   def show
+    @p_exists = Profile.where(prof2: @prof2, user: current_user) == [] ? false : true
+
+    @n_exists = Nolog.where(prof2: @prof2) == [] ? false : true
+    
   end
 
   # GET /prof2s/new

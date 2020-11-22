@@ -20,4 +20,25 @@ end
 helper_method :favo_text
 
 
+def p_text
+
+  return @p_exists ? "Remove" : "Add"
+  
+end
+
+  helper_method :p_text
+
+
+  def n_text
+
+    return @n_exists ? "Remove_P" : "Add_P"
+    
+  end
+    
+    helper_method :n_text
+
+
+
+
+
 end
