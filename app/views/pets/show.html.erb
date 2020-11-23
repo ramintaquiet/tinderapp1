@@ -21,7 +21,15 @@
   <%= @pet.User_id %>
  
 
-
+</br>
+<% if @pet.image.attached? %>
+<div style="width:300px; height:auto">
+<%= link_to image_tag(@pet.image, style:"width:100%"), pets_path %>
+<% else %>
+<div style="width:300px; height:auto">
+<%= image_tag("/defimage.jpg", style:"width:100%") %>
+<% end %>
+</div>
 
 </br>
 <td><%= link_to favo_text, favo_update_path(pet: @pet), id:'favo_link', remote: true %> </td>

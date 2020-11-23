@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   
   
+  get 'extra/one'
+  get 'extra/two'
+  get 'extra/three'
   get 'nolog/update'
   get 'profile/update'
   resources :prof2s

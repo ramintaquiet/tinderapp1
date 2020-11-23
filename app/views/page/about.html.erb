@@ -4,8 +4,18 @@
 
 <h1> your favorites </h1>
 <% current_user.favos.each do |favo| %>
-  you liked this pet: <%= link_to favo.pet.name, favo.pet %>
-  <br>
+  you liked this pet:
+
+  <% if favo.pet.image.attached? %>
+    <div style="width:300px; height:auto">
+    <%= link_to image_tag(favo.pet.image, style:"width:100%"), favo.pet %>
+    <% else %>
+    <div style="width:300px; height:auto">
+    <%= link_to image_tag("/defimage.jpg", style:"width:100%"), favo.pet %>
+    <% end %>
+    </div>
+
+
   <% end %>
 
   
