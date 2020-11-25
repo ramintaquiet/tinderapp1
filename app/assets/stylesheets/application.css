@@ -19,7 +19,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;    
+    background-color: #325698;    
     
 }
 
@@ -58,7 +58,7 @@ li a {
 }
 
 .container {
-      background: url("/assets/Site/clubhead.png");
+      
       background-repeat:no-repeat;
       background-position:right bottom;
       width: 100%;
